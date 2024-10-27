@@ -127,7 +127,7 @@ func (d *Dictionary) Lookup(params *Params) (*Entry, error) {
 		return nil, errors.Wrap(err, errMsg)
 	}
 
-	if entry.Code != 0 {
+	if entry.Code != 200 {
 		return nil, errors.Errorf("%s: (%d) %s", errMsg, entry.Code, entry.Message)
 	}
 
